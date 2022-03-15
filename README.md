@@ -7,6 +7,8 @@ _In this repository you can find the code for the Adevinta technical test_
 
 Scala version: "2.13.8"
 
+IDE: intellij idea
+
 Libraries used:
 ```
  - commons-io
@@ -23,16 +25,16 @@ To launch the jar on Windows(which is the environment I have used) use the follo
 java -cp adevinta-test.jar Main PathToTheFiles
 
 Example:
-java -cp adevinta-test.jar Main C:\Dev\adevinta2\data
+java -cp adevinta-test.jar Main C:\Dev\adevinta\data
 ```
 
 ## Notes 📋
 _On how some things have been implemented_
 * What constitutes a word.
-  * For me a word is what adds value, so there are certain words such as prepositions that are not taken into account, that is, both in the file and the text that the user enters, some prepositions do not count.
+  * For me a word is what adds value, so there are certain words such as prepositions that are not taken into account, that is, both in the file and the text that the user enters, some prepositions do not count, in text analysis this is what is known as **stopwords**, so I have applied the same logic. If you wanted to add more stopwords you would simply add them to the list (English only).
   * You can find that list in the code, in the var *ListOfPrepositions*.
 * What constitutes two words being equal (and matching)
   * If there are several words repeated in the files or in the user's entry, they are only counted once and it does not matter whether they are entered as uppercase, lowercase or alternately.
   * For example, if the user enters "Hello hello HeLlo" it is only counted as one word.
-* In the data folder, there are 3 example files, corresponding to news published on the [bbc](https://www.bbc.com/) portal.
+* In the data folder, there are 3 example files, corresponding to news published on the [bbc](https://www.bbc.com/) portal for testing.
 
